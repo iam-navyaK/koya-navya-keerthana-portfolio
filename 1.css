@@ -455,16 +455,19 @@ body {
 }
 
 /* About Section */
+/* About Section */
 .about-container {
     display: flex;
-    flex-direction: column;
-    gap: clamp(15px, 4vw, 20px);
+    flex-direction: row; /* row instead of column */
     align-items: center;
-    padding: clamp(15px, 4vw, 20px);
+    justify-content: center;
+    gap: clamp(15px, 4vw, 40px); /* Increased gap for side-by-side layout */
+    padding: clamp(15px, 4vw, 30px);
     width: 100%;
-    max-width: 100%;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
+/* Left: ASCII Art */
 .ascii-art {
     font-family: monospace;
     font-size: clamp(8px, 2vw, 11px);
@@ -474,21 +477,23 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: rainbowShift 10s ease infinite;
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-   
+    flex: 1;
+    text-align: left;
     white-space: pre;
+    
 }
 
+/* Right: About Text */
 .about-text {
     color: #cfcfcf;
-    max-width: 100%;
     font-family: sans-serif;
-    padding: 0 clamp(10px, 3vw, 15px);
-    text-align: center;
+    padding: 0 clamp(10px, 2vw, 20px);
+    text-align: left;
+    flex: 1;
+    min-width: 280px;
     word-wrap: break-word;
 }
+
 
 .highlight {
     font-size: clamp(16px, 4vw, 20px);
@@ -587,9 +592,6 @@ body {
         font-size: 18px;
     }
     
-    .terminal {
-        padding: 40px;
-    }
     
     .stats-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -598,18 +600,10 @@ body {
 
 /* Small Mobile Devices */
 @media (max-width: 480px) {
-    .terminal-header {
-        padding: 8px 12px;
-    }
     
-    .window-controls {
-        gap: 4px;
-    }
     
-    .control {
-        width: 10px;
-        height: 10px;
-    }
+   
+    
     
     .theme-toggle {
         padding: 4px 8px;
@@ -626,7 +620,7 @@ body {
     }
     
     .contact-links {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         gap: 8px;
     }
