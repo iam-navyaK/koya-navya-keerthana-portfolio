@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add command to terminal
         const commandLine = document.createElement('div');
-        commandLine.innerHTML = `<span class="prompt">navya-keerthana-koya@portfolio:~$</span> <span class="command-text">${command}</span>`;
+        commandLine.innerHTML = `<span class="prompt1">navya-keerthana-koya@portfolio:~$</span> <span class="command-text">${command}</span>`;
         outputDiv.appendChild(commandLine);
         
         // Process command
